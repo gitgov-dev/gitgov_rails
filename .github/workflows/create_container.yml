@@ -30,9 +30,6 @@ jobs:
       - name: Log into registry
         run: echo "${{ github.token }}" | docker login docker.pkg.github.com -u ${{ github.actor }} --password-stdin
 
-      - name: Build app
-        run: docker-compose -f docker-compose.yml -f docker-compose.from-dockerfile.yml -f docker-compose.prod.yml build
-
       - name: Push image
         run: |
           docker tag "${APP_IMAGE_NAME}:${REPO_VERSION}" "docker.pkg.github.com/${{github.repository}}/${APP_IMAGE_NAME}:${REPO_VERSION}"
