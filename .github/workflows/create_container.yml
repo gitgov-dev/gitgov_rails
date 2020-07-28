@@ -1,0 +1,26 @@
+name: Docker
+
+on:
+  push:
+    # Publish `master` as Docker `latest` image.
+    branches:
+      - ci-github-actions
+
+    # Publish `v1.2.3` tags as releases.
+    tags:
+      - v*
+
+env:
+
+jobs:
+  # Push image to GitHub Packages.
+  # See also https://docs.docker.com/docker-hub/builds/
+  push:
+    runs-on: ubuntu-latest
+    if: github.event_name == 'push'
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Build app
+        run: docker-compose -f docker-compose.container.yml build

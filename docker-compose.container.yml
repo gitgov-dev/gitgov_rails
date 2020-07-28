@@ -1,0 +1,17 @@
+version: '3.7'
+services:
+  gitlab:
+    # use second docker-compose to add image
+    build:
+      context: .
+      dockerfile: Dockerfile
+    tty: true
+    image: gitlab-omnibus
+    container_name: gitlab-omnibus
+    volumes:
+      - dbdata:/var/lib/postgresql/data
+    ports:
+      - 8080:80
+
+volumes:
+  dbdata:
