@@ -24,7 +24,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - name: Build app
+      - name: Build app 
         run: docker-compose -f docker-compose.container.yml build
 
       - name: Log into registry
