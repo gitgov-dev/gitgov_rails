@@ -5,9 +5,8 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    tty: true
-    image: gitlab-omnibus
-    container_name: gitlab-omnibus
+    image: "${APP_IMAGE_NAME}"
+    container_name: "${APP_IMAGE_NAME}"
     volumes:
       - dbdata:/var/lib/postgresql/data
     ports:
