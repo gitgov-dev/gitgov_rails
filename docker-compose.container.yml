@@ -5,7 +5,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    image: "${APP_IMAGE_NAME}"
+    image: "${APP_IMAGE_NAME}:${REPO_VERSION}"
     container_name: "${APP_IMAGE_NAME}"
     volumes:
       - dbdata:/var/lib/postgresql/data
