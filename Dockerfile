@@ -16,6 +16,7 @@ RUN mkdir -p /opt/gitlab/embedded/service/gitlab-rails/public
 RUN mkdir /opt/gitlab/embedded/service/gitlab-rails/db
 #RUN touch /var/opt/gitlab/gitlab-rails/REVISION
 RUN touch /opt/gitlab/embedded/service/gitlab-rails/REVISION
+RUN bundle update rake
 
 
 RUN echo "------ after replacement ------"
