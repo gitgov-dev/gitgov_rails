@@ -14,7 +14,7 @@ COPY ./ /opt/gitlab/embedded/service/gitlab-rails/
 # Configure gitlab
 RUN mkdir -p /opt/gitlab/embedded/service/gitlab-rails/public/uploads
 RUN mkdir /opt/gitlab/embedded/service/gitlab-rails/db
-RUN touch /var/opt/gitlab/gitlab-rails/REVISION
+#RUN touch /var/opt/gitlab/gitlab-rails/REVISION
 RUN touch /opt/gitlab/embedded/service/gitlab-rails/REVISION
 
 RUN echo "------ after replacement ------"
